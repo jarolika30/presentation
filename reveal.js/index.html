@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>MongoDB</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><img src="img/mongo_logo copy.png"><h1>Introduction</h1></section>
+				<section>
+					<ul class="build" style="padding:50px; list-style-type: none;background:#FFEFD5;">
+					<li><h2 style="border-bottom: 2px solid brown;">Have to answer:</h2> </li>
+					<li>What is MongoDB?</li>
+					<li>What is difference between SQL and NoSQL?</li>
+					<li>CRUD operations in MongoDB?</li>
+					</ul>
+				</section>
+				<section><h2>What is MongoDB?</h2>
+					<p>MongoDB is a free and open-source cross-platform document-oriented database program.
+					   It belongs to a non-relational database (NoSql). </p>
+				</section>
+				
+				<section>
+					<table class="simple-table" style="background:#FFEFD5;">
+						<caption>
+							<h2>NoSQL and SQL</h2>
+						</caption> 
+						  <tr>
+							<td style="background:#FFDAB9;"><strong>SQL</strong></td>
+							<td>Table based</td>
+							<td>defined schema</td>
+							<td>query language</td>
+						</tr>
+						<tr>
+							<td style="background:#FFDAB9;"><strong>NoSQL</strong></td>
+							<td>Document, key-value, graph-based...</td>
+							<td>flexible schema</td>
+							<td>object-oriented APIs</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+						<h2>Data structure example:</h2>
+						<table style="background:#FFEFD5;">
+							<tr><th><strong>SQL:</strong> </th><th><strong>NoSQL:</strong></th></tr>
+							<tr><td><table style="background: #343d46; color: white; margin-top: 10px; font-size: 30px;">
+									<tr><th style="border:2px solid #e3e3e3">id</th><th style="border:2px solid #e3e3e3">name</th><th style="border:2px solid #e3e3e3">category</th><th style="border:2px solid #e3e3e3">price</th></tr>
+									<tr><td style="border:2px solid #e3e3e3">1</td><td style="border:2px solid #e3e3e3">Coca-Cola</td><td style="border:2px solid #e3e3e3">drinks</td><td style="border:2px solid #e3e3e3">2.0</td></tr>	
+								</table>
+								</td>
+								<td><p style="background:#343d46; color: white;"> {<br>
+									"id": 2178,<br>
+									"name": "Coca-Cola",<br>
+									"category": "drinks",<br>
+									"price": 2.0<br>
+								}
+								</p></td>
+							</tr>
+						</table>
+				</section>
+				<section><h2>DB-Engines Ranking<img src="img/rank.png" style="height:500px; width: 1000px;"></h2></section>
+				<section>
+					<h2>MongoDB</h2>
+					<table style="background:#FFEFD5;">
+						<tr>
+							<th style="background:#FFDAB9;">Advantages</th>
+							<th style="background:#FFDAB9;">Disadvantages</th>
+						</tr>
+						<tr>
+							<td>object oriented</td>
+							<td>not support transactions</td>
+						</tr>
+						<tr>
+							<td>use JSON-like documents</td>
+							<td>not support join operation</td>
+						</tr>
+						<tr>
+							<td>have flexible/dynamic schemas</td>
+							<td>high memory usage</td>
+						</tr>
+						<tr>
+							<td>high speed</td>
+							<td></td>
+						</tr>
+					</table>
+				</section>
+				<section><h2>MongoDB Structure</h2> <img src="img/structure.png"></section>
+				<section><hgroup>
+					<h2>MongoDB Supported Types</h2>
+				  </hgroup>
+				  <article>
+					<ul class="build">
+					  <li>String</li>
+					  <li>Integer</li>
+					  <li>Boolean</li>
+					  <li>Double</li>
+					  <li>Arrays</li>
+					  <li>Date</li>
+					  <li>ObjectID</li>
+					  <li>...</li>
+					</ul>
+				  </article>
+				</section>
+				<section>
+					<h2>CRUD operations</h2>
+					<img src="img/crud.png" style="height: 500px;">
+				</section>
+				<section>
+					<h2>Create Operations</h2>
+					<ul style="text-align: left;">
+						<li>db.collection.insertOne() New in version 3.2</li>
+						<li>db.collection.insertMany() New in version 3.2</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/insertO.png" alt="insert one">
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/insertM.png" alt="insert many" style="margin-top:-20px;">
+				</section>
+				<section>
+						<h2>Read Operations</h2>
+						<ul style="text-align: left;">
+							<li>db.collection_name.find()</li>
+							<li>db.collection_name.find().pretty()</li>
+							<li>db.collection_name.count()</li>
+							<li>show dbs</li>
+							<li>db</li>
+							<li>use name_db</li>
+							<li>show collections</li>
+						</ul>
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/read.png">
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/mongo-pretty.jpg">
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<p style="text-align: left; background:#343d46; color: white; "> db.movieDetails.find()<br>
+						{ "_id" : ObjectId("5ce6650b1fcbd699dbf48225"), "title" : "A Million Ways to Die in
+						 the West", "year" : 2014, "rated" : "R", "runtime" : 116, "countries" : [ "USA" ],
+						  "genres" : [ "Comedy", "Western" ], "director" : "Seth MacFarlane", "writers" : 
+						  ...}</p>
+				</section>
+				<section>
+					<h2>Update Operations</h2>
+						<ul style="text-align: left;">
+							<li>db.collection.updateOne()</li>
+							<li>db.collection.updateMany()</li>
+							<li>db.collection.replaceOne()</li>
+						</ul>
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/update.png">	
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/update1.png">	
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/update2.png">	
+				</section>
+				<section>
+					<h2>Delete Operations</h2>
+					<ul style="text-align: left;">
+						<li>db.collection.deleteOne()</li>
+						<li>db.collection.deleteMany()</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Example:</h2>
+					<img src="img/delete2.png">	
+				</section>
+				<section>
+						<h2>The main ideas are:</h2>
+						<ul style="text-align: left;">
+							<li>MongoDB is a document oriented NoSQL database;</li>
+							<li>It uses JSON-like documents and has a flexible schema;</li>
+							<li>Databases consist of collections,collections of documents and documents consist of fields; </li>
+							<li>Create operations: .insertOne() / .insertMany();</li>
+							<li>Read operations: .find() / .find().pretty;</li>
+							<li>Update operations: .updateOne() / .updateMany() / .replaceOne();</li>
+							<li>Delete operations: .deleteOne() / .deleteMany().</li>
+						</ul>
+					</section>
+				<section>
+					<h2>Useful links for beginner:</h2>
+					<ul>
+						<li><a href="https://www.mongodb.com/">https://www.mongodb.com</a></li>
+						<li><a href="https://docs.mongodb.com/manual/tutorial">https://docs.mongodb.com/manual/tutorial</a></li>
+						<li><a href="https://university.mongodb.com/">https://university.mongodb.com</a></li>
+						<li><a href="https://data-flair.training/blogs/mongodb-data-types/">https://data-flair.training/blogs/mongodb-data-types/</a></li>
+						<li><a href="https://metanit.com/nosql/mongodb/">https://metanit.com/nosql/mongodb</a></li>
+					</ul>
+				</section>
+				<section style="background: url(img/end.jpg) no-repeat; background-size:cover; ">
+						<h2 style="color: white; height: 500px;">The End</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
